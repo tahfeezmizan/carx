@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/cars')
+        loader: () => fetch('https://carx-server-six.vercel.app/cars')
       },
       {
         path: "/addproduct",
