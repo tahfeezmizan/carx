@@ -30,6 +30,9 @@ const Navbar = () => {
                     <div className="flex gap-4">
                         <NavLink className="btn btn-outline font-semibold text-base" to="/login">Login</NavLink>
                     </div>
+                    <div className="flex gap-4">
+                        <NavLink className="btn btn-outline font-semibold text-base" to="/register">Register</NavLink>
+                    </div>
                 </div>
             </div>
         </div>

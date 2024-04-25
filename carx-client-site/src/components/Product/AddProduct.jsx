@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import UrlContext from "../Context/UrlContext";
 
 const AddProduct = () => {
-    const url = useContext(UrlContext);
 
     const {
         register,
@@ -14,8 +11,9 @@ const AddProduct = () => {
 
     const onSubmit = (data) => {
         console.log(data);
+        console.log(url)
 
-        fetch(url+"/cars", {
+        fetch(url + "/cars", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

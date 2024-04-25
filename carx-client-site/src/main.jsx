@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css';
 import Home from './components/Home/Home';
-import Root from './Root';
 import AddProduct from './components/Product/AddProduct';
-import UrlContext from './components/Context/UrlContext';
+import './index.css';
+import Root from './Root';
+import Login from './components/Header/Login';
+import Register from './components/Header/Register';
 
-// const url = useContext(UrlContext);
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +25,14 @@ const router = createBrowserRouter([
         path: "/addproduct",
         element: <AddProduct></AddProduct>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      }
     ]
   },
 
