@@ -31,10 +31,7 @@ client
 
 async function run() {
     try {
-        // Connect the client to the server	(optional starting in v4.7)
-        // await client.connect();
-        // Send a ping to confirm a successful connection
-
+  
         const carCollaction = client.db('carxDB').collection('carx');
 
         app.get('/cars', async (req, res) => {
@@ -46,19 +43,16 @@ async function run() {
         app.post('/cars', async (req, res) => {
             const cars = req.body;
             console.log(cars)
-            const newCars = { cars };
-            const result = await carCollaction.insertOne(newCars);
+            const result = await carCollaction.insertOne(cars);
             res.send(result)
         })
 
-
-        // await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
-        // Ensures that the client will close when you finish/error
-        // await client.close();
+      
     }
 }
+
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
